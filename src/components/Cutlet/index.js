@@ -1,12 +1,32 @@
 import React from 'react'
-import { Inner } from './styles/cutlet';
+import { Inner,Container,Pane,Title,SubTitle,Image,Item  } from './styles/cutlet';
 
-function Cutlet() {
+function Cutlet({ children, direction = 'row', ...restProps}) {
     return (
-        <Inner>
-            <p> Hello there!! </p>
-        </Inner>
-    )
+        <Item {...restProps}>
+            <Inner direction={direction} >
+            {children}
+            </Inner>
+        </Item>
+        
+    );
+}
+Cutlet.Container = function CutletContainer({ children , ...restProps}) {
+    return <Container {...restProps}>{children}</Container>
+}
+Cutlet.Pane = function CutletPane({ children , ...restProps}) {
+    return <Pane {...restProps}>{children}</Pane>
+}
+Cutlet.Title = function CutletTitle({ children , ...restProps}) {
+    return <Title {...restProps}>{children}</Title>
+}
+Cutlet.SubTitle = function CutletSubTitle({ children , ...restProps}) {
+    return <SubTitle {...restProps}>{children}</SubTitle>
+}
+Cutlet.Image = function CutletImage({ ...restProps}) {
+    return <Image {...restProps} />;
 }
 
+
 export default Cutlet
+ 
