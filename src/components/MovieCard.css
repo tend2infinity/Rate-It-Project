@@ -1,0 +1,12 @@
+.mycard
+{
+    min-width: 345;
+    background-color: black;
+    color: white;
+    margin: 2%;
+  }
+  
+.media {
+    height: 0;
+    padding: '56.25%';
+  }
