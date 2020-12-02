@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+/* Container holding the image and the text */
+.container {
+background-color: black;
+  position: relative;
+  text-align: right;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+width: 60%;
+  text-align: left;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  text-shadow: 2px 2px 15px black;
+}
+
+
+
+img
+{
+height: 60vh;
+width: 70%;
+object-fit: cover;
+object-position: 0% 50%;
+}
+
+.down
+{
+background-color: black;
+font-family: 'Architects Daughter';
+color: red;
+text-align: center;
+font-size: 5vh;
+}
+
+h1
+{
+font-family: 'Montserrat Subrayada', sans-serif;
+color: red;
+font-size: 10vh;
+text-shadow: 2px 2px 8px black;
+}

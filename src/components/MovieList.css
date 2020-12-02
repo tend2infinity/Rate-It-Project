@@ -1,0 +1,7 @@
+.MovieList {
+display: flex;
+background-color: black;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
