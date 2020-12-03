@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
 /* Container holding the image and the text */
 .container {
@@ -7,6 +8,9 @@ background-color: black;
   position: relative;
   text-align: right;
   color: white;
+  box-shadow: -93px -111px 43px 13px rgba(0,0,0,0.75) inset;
+-webkit-box-shadow: -93px -111px 43px 13px rgba(0,0,0,0.75) inset;
+-moz-box-shadow: -93px -111px 43px 13px rgba(0,0,0,0.75) inset;
 }
 
 /* Bottom left text */
@@ -32,7 +36,7 @@ object-position: 0% 50%;
 .down
 {
 background-color: black;
-font-family: 'Architects Daughter';
+font-family: 'Carter One', cursive;
 color: red;
 text-align: center;
 font-size: 5vh;

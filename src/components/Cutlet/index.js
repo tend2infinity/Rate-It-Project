@@ -29,4 +29,3 @@ Cutlet.Image = function CutletImage({ ...restProps}) {
 
 
 export default Cutlet
- 

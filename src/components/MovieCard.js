@@ -19,13 +19,13 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 345,
+    minWidth: 340,
     backgroundColor: "black",
     color: "white",
     margin: '2px 0',
     transition: ".2s ease-in-out",
     '&:hover':{
-		transform: "scale(1.1)",
+		transform: "scale(1.05)",
 	},
   },
   media: {
@@ -35,9 +35,8 @@ const useStyles = makeStyles((theme) => ({
   text:
   {
 	  fontSize: 25,
-	  fontFamily: 'Acme',
+	  fontFamily: 'Carter One',
 	  textAlign: 'center',
-	  padding: '0',
   },
   
 }));
