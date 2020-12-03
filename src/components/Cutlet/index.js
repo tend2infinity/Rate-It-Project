@@ -1,5 +1,6 @@
 import React from 'react'
 import { Inner,Container,Pane,Title,SubTitle,Image,Item  } from './styles/cutlet';
+import MovieList from '../MovieList.js';
 
 function Cutlet({ children, direction = 'row', ...restProps}) {
     return (
@@ -8,7 +9,6 @@ function Cutlet({ children, direction = 'row', ...restProps}) {
             {children}
             </Inner>
         </Item>
-        
     );
 }
 Cutlet.Container = function CutletContainer({ children , ...restProps}) {
@@ -29,3 +29,14 @@ Cutlet.Image = function CutletImage({ ...restProps}) {
 
 
 export default Cutlet
+
+/*import React from 'react';
+import MovieList from '../MovieList.js';
+export default function Cutlet() {
+    return (
+    <div>
+    <MovieList/>
+    </div>
+        
+    );
+}*/
