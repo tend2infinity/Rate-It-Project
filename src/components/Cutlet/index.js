@@ -1,12 +1,14 @@
-import React from 'react'
-import { Inner } from './styles/cutlet';
+ 
+import React from 'react';
+import {render} from 'react-dom';
+import './index.css';
+import App from './App';
+import {GlobalStyles} from './GlobalStyles';
+import 'normalize.css';
 
-function Cutlet() {
-    return (
-        <Inner>
-            <p> Hello there!! </p>
-        </Inner>
-    )
-}
-
-export default Cutlet
+render(<>
+  <GlobalStyles />
+    <App />
+    </>,
+  document.getElementById('root')
+);
