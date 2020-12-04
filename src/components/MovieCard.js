@@ -10,7 +10,6 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import ShareIcon from '@material-ui/icons/Share';
@@ -19,20 +18,34 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer'
 
-const useStyles = makeStyles((theme) => ({
+var useStyles = makeStyles((theme) => ({
   root: {
-    width: 345,
+	margin: "0 1%",
+    width: "12vw",
+    border: '2px solid white',
     backgroundColor: "black",
     color: "white",
-    margin: '2px 0',
     transition: ".2s ease-in-out",
     '&:hover':{
 		transform: "scale(1.05)",
+		cursor: "pointer",
+	},
+  },
+  root1: {
+	margin: "0 1%",
+    width: "12vw",
+    backgroundColor: "black",
+    color: "white",
+    transition: ".2s ease-in-out",
+    border: "none",
+    '&:hover':{
+		transform: "scale(1.05)",
+		cursor: "pointer",
 	},
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '177.7%', // 16:9
   },
   text:
   {
@@ -45,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
     transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
+      duration: theme.transitions.duration.short,
     }),
   },
   expandOpen: {
@@ -61,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 	  flexWrap: "wrap",
       justifyContent: "space-around",
       flexDirection: "row",
-      padding: "1%",
+      padding: "2%",
   },
   write:
   {
@@ -101,6 +114,7 @@ export default function MovieCard(props) {
   };
   
   const handleExpandTrailer = () => {
+        
 	  movieTrailer( props.Title )
         .then( response =>
         {
@@ -123,7 +137,7 @@ export default function MovieCard(props) {
 
   return (
   <>
-    <Card className={classes.root}
+    <Card className={ (expanded) ? classes.root : classes.root1}
     onClick={handleExpandTrailer}>
       <CardMedia
         className={classes.media}

@@ -27,10 +27,10 @@ export default class MovieList extends React.Component{
 		  <div> Loading </div>
 		  :
 		  <div>
-		  <MovieTop Title = {this.state.movie[14].title} Poster = {this.state.movie[14].poster_path} Overview = {this.state.movie[14].overview}/>
+		  <MovieTop Title = {this.state.movie[0].title} Poster = {this.state.movie[0].poster_path} Overview = {this.state.movie[0].overview}/>
 		  <div className="MovieList">
       {this.state.movie.map(name => (
-          <MovieCard Title = {name.title} Poster = {name.poster_path} Overview = {name.overview} date = {name.release_date} />
+          <MovieCard Title = {name.title} Poster = {name.poster_path} Overview = {name.overview} date = {name.release_date} id={name.id} />
       ))}
     </div>
 		  </div>

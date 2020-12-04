@@ -1,14 +1,15 @@
 import React from 'react'
 import { Inner,Container,Pane,Title,SubTitle,Image,Item  } from './styles/cutlet';
-import MovieList from '../MovieList.js';
 
 function Cutlet({ children, direction = 'row', ...restProps}) {
     return (
+    <div>
         <Item {...restProps}>
             <Inner direction={direction} >
             {children}
             </Inner>
         </Item>
+        </div>
     );
 }
 Cutlet.Container = function CutletContainer({ children , ...restProps}) {
