@@ -75,6 +75,7 @@ var useStyles = makeStyles((theme) => ({
       justifyContent: "space-around",
       flexDirection: "row",
       padding: "2%",
+      margin: "1%",
   },
   write:
   {

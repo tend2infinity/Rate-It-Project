@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import MovieCard from './MovieCard.js';
 import MovieTop from './MovieTop.js';
+import MovieSearch from './MovieSearch.js';
 import './MovieList.css';
 import AOS from 'aos';
 import "aos/dist/aos.css";
@@ -27,6 +28,7 @@ export default class MovieList extends React.Component{
 		  <div> Loading </div>
 		  :
 		  <div>
+		  <MovieSearch/>
 		  <MovieTop Title = {this.state.movie[0].title} Poster = {this.state.movie[0].poster_path} Overview = {this.state.movie[0].overview}/>
 		  <div className="MovieList">
       {this.state.movie.map(name => (
@@ -44,7 +46,7 @@ export default class MovieList extends React.Component{
 
 
 
-
+//https://api.themoviedb.org/3/search/movie?api_key=cd74296e33afa394a19ac0d3043856f2&query=avenger
 //"https://api.themoviedb.org/3/trending/movie/week?api_key=cd74296e33afa394a19ac0d3043856f2"
 /*<div className="MovieList">
       {this.state.movie.map(name => (
