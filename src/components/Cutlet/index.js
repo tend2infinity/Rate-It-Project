@@ -1,9 +1,12 @@
 import React from 'react'
 import { Inner,Container,Pane,Title,SubTitle,Image,Item  } from './styles/cutlet';
 
+
+
+
 function Cutlet({ children, direction = 'row', ...restProps}) {
     return (
-        <Item {...restProps}>
+        <Item {...restProps}  data-aos="fade-in">
             <Inner direction={direction} >
             {children}
             </Inner>

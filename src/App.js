@@ -1,26 +1,26 @@
 import React , {useEffect, useState} from 'react';
-// import './App.css';
-import cutletText from './homeSnippets/cutletText'
-import Navbar from './Navbar.js'
-import Cutlet from './components/Cutlet'
+import {Home, Browse, Signin, Signup } from './pages'
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-function App() {
+
+export function App() {
   return (
-      <Cutlet.Container>
-        {cutletText.map((item) => (
-        <Cutlet key={item.id} direction={item.direction}>
-          <Cutlet.Pane>
-            <Cutlet.Title>{item.title}</Cutlet.Title>
-            <Cutlet.SubTitle>{item.subTitle}</Cutlet.SubTitle>
-          </Cutlet.Pane>
-          <Cutlet.Pane>
-           <Cutlet.Image src={item.image} alt={item.alt} />
-          </Cutlet.Pane>
-        </Cutlet>
-
-        ))}  
-      </Cutlet.Container>
+    <Router>
+      <Route exact path="/signup">
+        <Signup />
+      </Route> 
+      <Route exact path="/signin">
+        <Signin />
+      </Route>
+      <Route exact path="/browse">
+        <Browse />
+      </Route>
+      <Route exact path="/">
+        <Home />
+      </Route>
+       
+    </Router>
   );
 }
 
-export default App;
+

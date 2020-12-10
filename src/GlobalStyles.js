@@ -6,7 +6,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: black;
-    color: #333333;
+    color: white;
     font-size: 16px;
 }
 `;
