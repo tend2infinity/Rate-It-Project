@@ -10,33 +10,92 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer'
 
-const useStyles = makeStyles((theme) => ({
+var useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 340,
+	margin: "0 1%",
+    width: "12vw",
+    border: '2px solid white',
     backgroundColor: "black",
     color: "white",
-    margin: '2px 0',
     transition: ".2s ease-in-out",
     '&:hover':{
 		transform: "scale(1.05)",
+		cursor: "pointer",
+	},
+  },
+  root1: {
+	margin: "0 1%",
+    width: "12vw",
+    backgroundColor: "black",
+    color: "white",
+    transition: ".2s ease-in-out",
+    border: "none",
+    '&:hover':{
+		transform: "scale(1.05)",
+		cursor: "pointer",
 	},
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '177.7%', // 16:9
   },
   text:
   {
 	  fontSize: 25,
 	  fontFamily: 'Carter One',
 	  textAlign: 'center',
+	  wordWrap: "break-word",
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.short,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  details:
+  {
+	  backgroundColor: "#0c0d0c",
+	  width: "100vw",
+	  minHeight: "50vh",
+	  display: "flex",
+	  color: "white",
+	  flexWrap: "wrap",
+      justifyContent: "space-around",
+      flexDirection: "row",
+      padding: "2%",
+      margin: "1%",
+  },
+  write:
+  {
+	  fontSize: 20,
+	  display: "flex",
+	  width: "50%",
+	  justifyContent: "center",
+	  flexDirection: "column",
+  },
+  title:
+  {
+	  fontSize: "8vh",
+	  textAlign: "center",
+	  fontFamily: 'Montserrat Subrayada',
+  },
+  trailer:
+  {
+	  display: "flex",
+	  width: "50%",
+	  justifyContent: "center",
   },
   
 }));
@@ -45,7 +104,28 @@ export default function MovieCard(props) {
   const classes = useStyles();
   const [nominated, setNominated] = React.useState(false);
   
+  
   // yahan backend se we will bring if true ya false! abhi k liye um doing it false
+  
+  const [expanded, setExpanded] = React.useState(false);
+  const [trailer, setTrailer] = React.useState(null);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+  
+  const handleExpandTrailer = () => {
+        
+	  movieTrailer( props.Title )
+        .then( response =>
+        {
+			response = response.replace("watch?v=", "embed/")
+			setTrailer(response);
+		}
+        )
+  };
+  
+  //this is for the expand card
   
   const path1 = "https://image.tmdb.org/t/p/original";
   const path2 = String(props.Poster);
@@ -57,11 +137,14 @@ export default function MovieCard(props) {
   };
 
   return (
-    <Card className={classes.root}>
+  <>
+    <Card className={ (expanded) ? classes.root : classes.root1}
+    onClick={handleExpandTrailer}>
       <CardMedia
         className={classes.media}
         image={path3}
         title={props.Title}
+        onClick={handleExpandClick}
       />
       <CardContent>
         <Typography component="p" className={classes.text}>
@@ -83,7 +166,34 @@ export default function MovieCard(props) {
         <IconButton aria-label="Share It">
           <ShareIcon style={{color:"white" , fontSize: 30 }} />
         </IconButton>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon style={{color:"white" , fontSize: 30 }} onClick={handleExpandTrailer} />
+        </IconButton>
       </CardActions>
-    </Card>
+      </Card>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent className={classes.details}>
+        <div className={classes.write}>
+          <h2 className={classes.title}>{props.Title}</h2>
+          <br></br>
+          <br></br>
+          <b>Release Date:</b>{props.date}<br></br><br></br>
+          <b>Overview:</b> 
+          {props.Overview}
+          </div>
+          <div className={classes.trailer}>
+        <iframe src={trailer} width="90%" height="100%"/>
+        </div>
+        </CardContent>
+      </Collapse>
+      </>
+      
   );
 }

@@ -11,7 +11,7 @@ function Cutlet({ children, direction = 'row', ...restProps}) {
             {children}
             </Inner>
         </Item>
-        
+        </div>
     );
 }
 Cutlet.Container = function CutletContainer({ children , ...restProps}) {
@@ -32,3 +32,14 @@ Cutlet.Image = function CutletImage({ ...restProps}) {
 
 
 export default Cutlet
+
+/*import React from 'react';
+import MovieList from '../MovieList.js';
+export default function Cutlet() {
+    return (
+    <div>
+    <MovieList/>
+    </div>
+        
+    );
+}*/

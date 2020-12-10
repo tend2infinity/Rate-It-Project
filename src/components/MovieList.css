@@ -4,4 +4,45 @@ background-color: black;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.search{
+display: flex;
+  box-sizing: border-box;
+  margin: 1%;
+}
+
+/* Style the search field */
+form input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background-color: black;
+  color: white;
+}
+
+/* Style the submit button */
+.searchbutton {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+.searchbutton:hover {
+  background: crimson;
+}
+.down
+{
+background-color: black;
+font-family: 'Carter One', cursive;
+color: red;
+text-align: center;
+font-size: 5vh;
+}
 
