@@ -16,12 +16,17 @@ justify-content: space-between;
 max-width: 1100px;
 margin:auto;
 width: 100%;
-@media (max-width: 1000px)  {
+@media (max-width: 850px)  {
     flex-direction: column;
 };
 `;
 
 export const Container = styled.div`
+@media (max-width: 850px) {
+    ${Item}:last of type h2 {
+        margin-bottom: 50px;
+    }
+}
 `; 
 export const Title = styled.h1`
 font-size: 40px;
@@ -45,7 +50,7 @@ height: auto;
 export const Pane = styled.div`
 width: 50%;
 padding : 15px;
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
     width: 100%;
     padding: 0 45px;
     text-align: center;
