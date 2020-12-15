@@ -20,39 +20,38 @@ import movieTrailer from 'movie-trailer'
 
 var useStyles = makeStyles((theme) => ({
   root: {
-	margin: "0 1%",
-    width: "12vw",
     border: '2px solid white',
-    backgroundColor: "black",
+    backgroundColor: "transparent",
     color: "white",
-    transition: ".2s ease-in-out",
-    '&:hover':{
-		transform: "scale(1.05)",
-		cursor: "pointer",
-	},
+    marginRight: "8%",
+    marginLeft: "8%",
+    padding: "2%",
   },
   root1: {
-	margin: "0 1%",
-    width: "12vw",
-    backgroundColor: "black",
+    backgroundColor: "transparent",
     color: "white",
-    transition: ".2s ease-in-out",
-    border: "none",
-    '&:hover':{
-		transform: "scale(1.05)",
-		cursor: "pointer",
-	},
+    marginRight: "8%",
+    marginLeft: "8%",
+    padding: "2%",
   },
   media: {
     height: 0,
     paddingTop: '177.7%', // 16:9
+    transition: ".2s ease-in-out",
+    boxShadow: "0px 0px 14px 7px rgba(0,0,0,0.89)",
+    '&:hover':{
+		transform: "scale(1.1)",
+		cursor: "pointer",
+	},
   },
   text:
   {
 	  fontSize: 25,
 	  fontFamily: 'Carter One',
 	  textAlign: 'center',
-	  wordWrap: "break-word",
+	  whiteSpace: 'nowrap',
+      overflow: 'hidden',
+	  textOverflow:'ellipsis' ,
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -138,20 +137,9 @@ export default function MovieCard(props) {
 
   return (
   <>
-    <Card className={ (expanded) ? classes.root : classes.root1}
+    <Card className={classes.root1}
     onClick={handleExpandTrailer}>
-      <CardMedia
-        className={classes.media}
-        image={path3}
-        title={props.Title}
-        onClick={handleExpandClick}
-      />
-      <CardContent>
-        <Typography component="p" className={classes.text}>
-          {props.Title}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
+    <CardActions disableSpacing style={{position:"absolute" , zIndex:2}}>
         <IconButton onClick={handleNominateClick}>
         {
 			nominated
@@ -163,36 +151,19 @@ export default function MovieCard(props) {
           
           
         </IconButton>
-        <IconButton aria-label="Share It">
-          <ShareIcon style={{color:"white" , fontSize: 30 }} />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon style={{color:"white" , fontSize: 30 }} onClick={handleExpandTrailer} />
-        </IconButton>
       </CardActions>
+      <CardMedia
+        className={classes.media}
+        image={path3}
+        title={props.Title}
+        onClick={handleExpandClick}
+      />
+      <CardContent>
+        <Typography component="p" className={classes.text}>
+          {props.Title}
+        </Typography>
+      </CardContent>
       </Card>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent className={classes.details}>
-        <div className={classes.write}>
-          <h2 className={classes.title}>{props.Title}</h2>
-          <br></br>
-          <br></br>
-          <b>Release Date:</b>{props.date}<br></br><br></br>
-          <b>Overview:</b> 
-          {props.Overview}
-          </div>
-          <div className={classes.trailer}>
-        <iframe src={trailer} width="90%" height="100%"/>
-        </div>
-        </CardContent>
-      </Collapse>
       </>
       
   );

@@ -1,22 +1,32 @@
-.MovieList {
-display: flex;
-background-color: black;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 .search{
 display: flex;
   box-sizing: border-box;
   margin: 1%;
+  width: 95%;
+  justify-content: flex-end;
+  margin: 2%;
+  
 }
 
 /* Style the search field */
 form input[type=text] {
+transition: .2s ease-in-out;
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
-  float: left;
-  width: 80%;
+  float:left;
+  width: 20%;
+  background-color: black;
+  color: white;
+  border-radius: 20px 0px 0px 20px; 
+}
+
+form input[type=text]:focus {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float:left;
+  width: 60%;
   background-color: black;
   color: white;
 }
@@ -24,18 +34,19 @@ form input[type=text] {
 /* Style the submit button */
 .searchbutton {
   float: left;
-  width: 20%;
+  width: 5%;
   padding: 10px;
-  background-color: red;
+  background-color: #44C8B6;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
   border-left: none; /* Prevent double borders */
+  border-radius: 0px 20px 20px 0px; 
   cursor: pointer;
 }
 
 .searchbutton:hover {
-  background: crimson;
+  background: steelblue;
 }
 .down
 {
@@ -44,5 +55,14 @@ font-family: 'Carter One', cursive;
 color: red;
 text-align: center;
 font-size: 5vh;
+}
+
+.slick-prev {
+  left: 1% ;
+  z-index: 1;
+}
+.slick-next {
+  right: 1%;
+  z-index: 1;
 }
 

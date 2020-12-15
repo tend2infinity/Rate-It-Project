@@ -1,12 +1,11 @@
-import React from "react";
+ import React from "react";
 import { useEffect, useState } from "react";
+import MovieDetails from './MovieDetails.js';
 import MovieCard from './MovieCard.js';
-import MovieTop from './MovieTop.js';
-import MovieSearch from './MovieSearch.js';
-import './MovieList.css';
-import AOS from 'aos';
-import "aos/dist/aos.css";
 import SearchIcon from '@material-ui/icons/Search';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 export default class MovieList extends React.Component{
 	
 	state ={
@@ -36,6 +35,8 @@ export default class MovieList extends React.Component{
   },
   ],
 		searchValue: null,
+		nav1: null,
+        nav2: null,
 		
 	}
 	
@@ -51,6 +52,10 @@ export default class MovieList extends React.Component{
 		const data = await response.json();
 		console.log(url);
 		this.setState({...this.state.searchValue,movie: data.results,showSearch:true});
+		this.setState({
+      nav1: this.slider1,
+      nav2: this.slider2
+       });
 	}
 	render() {
 
@@ -65,111 +70,41 @@ export default class MovieList extends React.Component{
         />
         <button onClick={this.callSearchFunction.bind(this)} type="submit" value="Search" className="searchbutton"><SearchIcon/></button>
       </form>
+      
       <div style={{ display: this.state.showSearch ? "block" : "none" }}>
-      <div className="down">
-      Search Results for {this.state.searchValue} -
-      </div>
-      <div className="MovieList">
+      
+      <Slider
+          asNavFor={this.state.nav2}
+          ref={slider => (this.slider1 = slider)}
+          arrows={true}
+          fade={true}
+           >
+           {this.state.movie.map(name => (
+          <MovieDetails title = {name.title} Poster = {name.poster_path} Overview = {name.overview} date = {name.release_date} id={name.id} />
+      ))}
+      
+           </Slider>
+           
+          <div style={{zIndex:2}}>
+		  <Slider
+          asNavFor={this.state.nav1}
+          ref={slider => (this.slider2 = slider)}
+          slidesToShow={11}
+          swipeToSlide={true}
+          focusOnSelect={true}
+          arrows={true}
+          lazyLoad={true}
+          >
+          
       {this.state.movie.map(name => (
           <MovieCard Title = {name.title} Poster = {name.poster_path} Overview = {name.overview} date = {name.release_date} id={name.id} />
       ))}
+      
+    </Slider>
     </div>
+    
       </div>
       </>
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React, { useState } from "react";
-
-
-const MovieSearch = (props) => {
-  const [searchValue, setSearchValue] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
-  var movie = {};
-  
-  const handleSearchInputChanges = (e) => {
-    setSearchValue(e.target.value);
-  }
-
-  const resetInputField = () => {
-    setSearchValue("");
-    setShowSearch(false);
-  }
-
-  const callSearchFunction = (e) => {
-	 e.preventDefault()
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=cd74296e33afa394a19ac0d3043856f2&query=${searchValue}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(
-        (result) => {
-          movie = result;
-          setShowSearch(true);
-          console.log(movie);
-          console.log(showSearch);
-          console.log(result);
-        },
-        (error) => {
-          console.log("Error!!");
-        }
-      )
-  }
-
-  return (
-  <>
-      <form className="search">
-        <input
-          value={searchValue}
-          onChange={handleSearchInputChanges}
-          type="text"
-        />
-        <input onClick={callSearchFunction} type="submit" value="SEARCH" />
-      </form>
-      <div style={{ display: showSearch ? "block" : "none" }}>Hello!!{String(showSearch)}{JSON.stringify(movie)}</div>
-      </>
-    );
-}
-
-export default MovieSearch;*/

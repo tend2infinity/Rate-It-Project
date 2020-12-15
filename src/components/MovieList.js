@@ -1,23 +1,32 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import MovieCard from './MovieCard.js';
+import MovieDetails from './MovieDetails.js';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import MovieTop from './MovieTop.js';
 import MovieSearch from './MovieSearch.js';
 import './MovieList.css';
-import AOS from 'aos';
-import "aos/dist/aos.css";
 export default class MovieList extends React.Component{
+	constructor(props) {
+    super(props);
 	
-	state ={
+	this.state ={
 		loading: true,
 		movie: null,
-	}
+		nav1: null,
+        nav2: null,
+	}}
 	
 	async componentDidMount(){
-		const url = "https://api.themoviedb.org/3/trending/movie/week?api_key=cd74296e33afa394a19ac0d3043856f2";
+		const url = "https://api.themoviedb.org/3/trending/movie/day?api_key=cd74296e33afa394a19ac0d3043856f2";
 		const response = await fetch(url);
 		const data = await response.json();
 		this.setState({movie: data.results,loading: false});
+		this.setState({
+      nav1: this.slider1,
+      nav2: this.slider2
+       });
 	}
 	render() {
 
@@ -27,29 +36,39 @@ export default class MovieList extends React.Component{
 		  ?
 		  <div> Loading </div>
 		  :
-		  <div>
-		  <MovieSearch/>
-		  <MovieTop Title = {this.state.movie[0].title} Poster = {this.state.movie[0].poster_path} Overview = {this.state.movie[0].overview}/>
-		  <div className="MovieList">
+		  <>
+		   <Slider
+          asNavFor={this.state.nav2}
+          ref={slider => (this.slider1 = slider)}
+          arrows={true}
+          fade={true}
+           >
+           {this.state.movie.map(name => (
+          <MovieDetails title = {name.title} Poster = {name.poster_path} Overview = {name.overview} date = {name.release_date} id={name.id} />
+      ))}
+      
+           </Slider>
+           
+          <div style={{zIndex:2}}>
+		  <Slider
+          asNavFor={this.state.nav1}
+          ref={slider => (this.slider2 = slider)}
+          slidesToShow={11}
+          swipeToSlide={true}
+          focusOnSelect={true}
+          arrows={true}
+          lazyLoad={true}
+          >
+          
       {this.state.movie.map(name => (
           <MovieCard Title = {name.title} Poster = {name.poster_path} Overview = {name.overview} date = {name.release_date} id={name.id} />
       ))}
+      
+    </Slider>
     </div>
-		  </div>
+    </>
 		  }
       </div>
     );
   }
 }
-
-
-
-
-
-//https://api.themoviedb.org/3/search/movie?api_key=cd74296e33afa394a19ac0d3043856f2&query=avenger
-//"https://api.themoviedb.org/3/trending/movie/week?api_key=cd74296e33afa394a19ac0d3043856f2"
-/*<div className="MovieList">
-      {this.state.movie.map(name => (
-          <MovieCard Title = {name.title} Poster = {name.poster_path} />
-      ))}
-    </div>*/
