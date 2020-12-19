@@ -108,21 +108,6 @@ export default function MovieCard(props) {
   
   const [expanded, setExpanded] = React.useState(false);
   const [trailer, setTrailer] = React.useState(null);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-  
-  const handleExpandTrailer = () => {
-        
-	  movieTrailer( props.Title )
-        .then( response =>
-        {
-			response = response.replace("watch?v=", "embed/")
-			setTrailer(response);
-		}
-        )
-  };
   
   //this is for the expand card
   
@@ -156,7 +141,6 @@ export default function MovieCard(props) {
         className={classes.media}
         image={path3}
         title={props.Title}
-        onClick={handleExpandClick}
       />
       <CardContent>
         <Typography component="p" className={classes.text}>
