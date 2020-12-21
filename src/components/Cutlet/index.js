@@ -11,7 +11,6 @@ function Cutlet({ children, direction = 'row', ...restProps}) {
             {children}
             </Inner>
         </Item>
-        </div>
     );
 }
 Cutlet.Container = function CutletContainer({ children , ...restProps}) {
