@@ -16,13 +16,13 @@ justify-content: space-between;
 max-width: 1100px;
 margin:auto;
 width: 100%;
-@media (max-width: 850px)  {
+@media (max-width: 1000px)  {
     flex-direction: column;
 };
 `;
 
 export const Container = styled.div`
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
     ${Item}:last of type h2 {
         margin-bottom: 50px;
     }
@@ -30,6 +30,7 @@ export const Container = styled.div`
 `; 
 export const Title = styled.h1`
 font-size: 40px;
+font-family: 'Hind Siliguri', sans-serif;
 line-height: 1.1;
 margin-bottom: 8px;
 @media (max-width: 600px) {
@@ -38,6 +39,7 @@ margin-bottom: 8px;
 export const SubTitle = styled.h2`
 font-size: 20px;
 font-weight: normal;
+font-family: 'Hind Siliguri', sans-serif;
 line-height: normal;
 @media (max-width: 600px) {
     font-size: 18px;
@@ -49,8 +51,9 @@ height: auto;
 `; 
 export const Pane = styled.div`
 width: 50%;
-padding : 15px;
-@media (max-width: 850px) {
+text-align: center;
+padding : 0 10px;
+@media (max-width: 1000px) {
     width: 100%;
     padding: 0 45px;
     text-align: center;
