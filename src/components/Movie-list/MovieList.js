@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import MovieTop from './MovieTop.js';
-import MovieSearch from '../MovieSearch.js';
+import MovieSearch from './MovieSearch.js';
 import './MovieList.css';
 export default class MovieList extends React.Component{
 	constructor(props) {

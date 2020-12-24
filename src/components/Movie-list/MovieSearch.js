@@ -90,7 +90,7 @@ export default class MovieList extends React.Component{
 		  		  <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
-          slidesToShow={11}
+          slidesToShow={6}
           swipeToSlide={true}
           focusOnSelect={true}
           arrows={true}

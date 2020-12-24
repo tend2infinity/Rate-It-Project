@@ -16,7 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import YouTube from 'react-youtube';
-import movieTrailer from 'movie-trailer'
+import MovieTrailer from 'movie-trailer';
 
 var useStyles = makeStyles((theme) => ({
   root: {

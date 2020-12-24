@@ -1,5 +1,5 @@
 import React from 'react';
-import movieTrailer from 'movie-trailer'
+import movieTrailer from 'movie-trailer';
 import './MovieDetails.css';
 
 export default class MovieDetails extends React.Component{
