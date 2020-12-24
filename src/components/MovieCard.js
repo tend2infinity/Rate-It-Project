@@ -122,8 +122,7 @@ export default function MovieCard(props) {
 
   return (
   <>
-    <Card className={classes.root1}
-    onClick={handleExpandTrailer}>
+    <Card className={classes.root1}>
     <CardActions disableSpacing style={{position:"absolute" , zIndex:2}}>
         <IconButton onClick={handleNominateClick}>
         {

@@ -37,7 +37,7 @@ form input[type=text]:focus {
   width: 5%;
   padding: 10px;
   background-color: #44C8B6;
-  color: white;
+  color: black;
   font-size: 17px;
   border: 1px solid grey;
   border-left: none; /* Prevent double borders */
