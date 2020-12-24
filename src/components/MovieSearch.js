@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import MovieDetails from './MovieDetails.js';
 import MovieCard from './MovieCard.js';
 import SearchIcon from '@material-ui/icons/Search';
+import './MovieList.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -86,7 +87,7 @@ export default class MovieList extends React.Component{
            </Slider>
            
           <div style={{zIndex:2}}>
-		  <Slider
+		  		  <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
           slidesToShow={11}
@@ -94,6 +95,31 @@ export default class MovieList extends React.Component{
           focusOnSelect={true}
           arrows={true}
           lazyLoad={true}
+          responsive={[{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]}
           >
           
       {this.state.movie.map(name => (
