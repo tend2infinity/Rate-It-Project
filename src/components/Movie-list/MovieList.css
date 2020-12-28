@@ -1,7 +1,19 @@
+.slick-prev:before{
+  left: 1% ;
+  z-index: 9999999999;
+  color: red;
+}
+.slick-next:before{
+  right: -25px !important;
+  z-index: 9999999;
+  color: red;
+}
+
+
+
 .search{
-display: flex;
+  display: flex;
   box-sizing: border-box;
-  margin: 1%;
   width: 95%;
   justify-content: flex-end;
   margin: 2%;
@@ -57,12 +69,5 @@ text-align: center;
 font-size: 5vh;
 }
 
-.slick-prev {
-  left: 1% ;
-  z-index: 1;
-}
-.slick-next {
-  right: 1%;
-  z-index: 1;
-}
+
 

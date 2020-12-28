@@ -76,7 +76,6 @@ closeModal()
    
    <div className="right">
    <img src={`https://image.tmdb.org/t/p/original${this.props.Poster}`}></img>
-   <div>{this.state.image}</div>
    </div>
    
    </div>

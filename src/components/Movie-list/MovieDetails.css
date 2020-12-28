@@ -48,7 +48,6 @@ background-size: cover;
 display: flex;
 width: 60%;
 flex-direction: column;
-padding: 2%;
   z-index: 2;
   backdrop-filter: blur(16px);
   color: white;
