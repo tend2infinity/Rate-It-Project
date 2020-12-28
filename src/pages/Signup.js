@@ -12,6 +12,7 @@ export default function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    
 
     // for checking valid email and pass
     const isInvalid = firstName === ''|| password === '' || email === '';
@@ -25,8 +26,10 @@ export default function Signup() {
             result.user.updateProfile({
                 displayName: firstName,
             })
+           
             .then(() =>{
                 history.push("/")
+                console.log(result);
             })
         )
         .catch((error) => {
@@ -35,6 +38,8 @@ export default function Signup() {
             setPassword('');
             setError(error.message);
         })
+       
+
     }
  return( 
     <>
