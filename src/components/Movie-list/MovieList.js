@@ -19,7 +19,7 @@ export default class MovieList extends React.Component{
 	}}
 	
 	async componentDidMount(){
-		const url = "https://api.themoviedb.org/3/trending/movie/day?api_key=cd74296e33afa394a19ac0d3043856f2";
+		const url = `${this.props.url}`;
 		const response = await fetch(url);
 		const data = await response.json();
 		this.setState({movie: data.results,loading: false});
