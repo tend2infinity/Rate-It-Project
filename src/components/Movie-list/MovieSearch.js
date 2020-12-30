@@ -51,7 +51,6 @@ export default class MovieList extends React.Component{
 		const url = `https://api.themoviedb.org/3/search/movie?api_key=cd74296e33afa394a19ac0d3043856f2&query=${this.state.searchValue}`;
 		const response = await fetch(url);
 		const data = await response.json();
-		console.log(url);
 		this.setState({...this.state.searchValue,movie: data.results,showSearch:true});
 		this.setState({
       nav1: this.slider1,
@@ -128,7 +127,9 @@ export default class MovieList extends React.Component{
       
     </Slider>
     </div>
-    
+    <div style={{ display: this.state.showSearch ? "none" : "block" }}>
+    <img src="https://www.pinclipart.com/picdir/middle/522-5225314_transparent-detective-pikachu-png-clipart.png"/>
+    </div>
       </div>
       </>
     );

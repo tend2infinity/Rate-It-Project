@@ -1,6 +1,7 @@
 import React from 'react';
 import movieTrailer from 'movie-trailer';
 import './MovieDetails.css';
+import YouTube from 'react-youtube';
 
 export default class MovieDetails extends React.Component{
 	constructor(props) {
@@ -12,6 +13,19 @@ export default class MovieDetails extends React.Component{
 	}
 }
 
+YouTubeGetID(url){
+  var ID = '';
+  url = url.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+  if(url[2] !== undefined) {
+    ID = url[2].split(/[^0-9a-z_\-]/i);
+    ID = ID[0];
+  }
+  else {
+    ID = url;
+  }
+    return ID;
+};
+
 componentDidMount(){
 	const path1 = "https://image.tmdb.org/t/p/original";
     const path2 = String(this.props.Poster);
@@ -20,7 +34,7 @@ componentDidMount(){
 	movieTrailer( String(this.props.title ))
         .then( response =>
         {
-			response = response.replace("watch?v=", "embed/")
+			response = this.YouTubeGetID(response);
 			this.setState({trailer: response})
 			this.setState({image: path3})
 		}
@@ -33,7 +47,7 @@ showModal()
 	movieTrailer( this.props.title )
         .then( response =>
         {
-			response = response.replace("watch?v=", "embed/")
+			response = this.YouTubeGetID(response);
 			this.setState({trailer: response});
 		}
         )
@@ -41,11 +55,21 @@ showModal()
 
 closeModal()
 {
+	this.setState({trailer: ""});
 	this.setState({show: "none"});
 };
 
   
 	render() {
+		
+		
+const opts = {
+      height: '400',
+      width: '800',
+      playerVars: {
+        autoplay: 0,
+      },
+    };
 
     return (
     <div className="outer" style = {{backgroundImage: `url(https://image.tmdb.org/t/p/original${this.props.Poster})`}}>
@@ -65,7 +89,7 @@ closeModal()
     
     <div className="modal-content">
     <span className="close" onClick={this.closeModal.bind(this)}>&times;</span>
-    <iframe src={this.state.trailer} width="100%" height="500px"/>
+    <YouTube videoId={this.state.trailer} opts={opts}/>
     </div>
 
    </div>

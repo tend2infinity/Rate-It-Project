@@ -34,6 +34,26 @@ var useStyles = makeStyles((theme) => ({
     marginLeft: "8%",
     padding: "2%",
   },
+  remove:
+  {
+	  color: "black",
+	  backgroundColor: "RGB(255,99,71, 0.7)",
+	  fontSize: 20,
+	  border: "2px solid black",
+	  fontWeight: "bold",
+	  borderRadius: 20,
+	  padding: 5,
+  },
+  nominate:
+  {
+	  color: "black",
+	  fontSize: 20,
+	  backgroundColor: "RGB(68, 200, 182, 0.7)",
+	  border: "2px solid black",
+	  fontWeight: "bold",
+	  borderRadius: 20,
+	  padding: 5,
+  },
   media: {
     height: 0,
     paddingTop: '177.7%', // 16:9
@@ -49,9 +69,6 @@ var useStyles = makeStyles((theme) => ({
 	  fontSize: 25,
 	  fontFamily: 'Carter One',
 	  textAlign: 'center',
-	  whiteSpace: 'nowrap',
-      overflow: 'hidden',
-	  textOverflow:'ellipsis' ,
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -106,8 +123,6 @@ export default function MovieCard(props) {
   
   // yahan backend se we will bring if true ya false! abhi k liye um doing it false
   
-  const [expanded, setExpanded] = React.useState(false);
-  const [trailer, setTrailer] = React.useState(null);
   
   //this is for the expand card
   
@@ -124,13 +139,21 @@ export default function MovieCard(props) {
   <>
     <Card className={classes.root1}>
     <CardActions disableSpacing style={{position:"absolute" , zIndex:2}}>
-        <IconButton onClick={handleNominateClick}>
+        <IconButton onClick={handleNominateClick} edge="start">
         {
 			nominated
 			?
-			<StarIcon style={{fontSize:"large"}} style={{color:"gold"  , fontSize: 30}} />
+			<>
+			<div className={classes.remove}>
+			<StarIcon style={{fontSize:"large"}} style={{color:"gold"  , fontSize: 20}} />
+			Remove</div>
+			</>
 			:
-			<StarBorderOutlinedIcon style={{color:"white"  , fontSize: 30}} />
+			<>
+			<div className={classes.nominate}>
+			<StarBorderOutlinedIcon style={{color:"black"  , fontSize: 20}} />
+			Nominate</div>
+			</>
 			}
           
           

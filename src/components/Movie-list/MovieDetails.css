@@ -47,6 +47,7 @@ background-size: cover;
 {
 display: flex;
 width: 60%;
+padding: 1%;
 flex-direction: column;
   z-index: 2;
   backdrop-filter: blur(16px);
@@ -137,7 +138,9 @@ transition: .2s ease-in-out;
 .trailer-button:hover
 {
 cursor: pointer;
-background-color: white;
+background-color: #44C8B6 ;
 color: black;
+font-weight: bold;
+border: 2px solid black;
 
 }
