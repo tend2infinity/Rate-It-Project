@@ -1,26 +1,23 @@
-import {useState, useEffect, useContext} from 'react';
+// import {useState, useEffect, useContext} from 'react';
 
-import { firebaseContext } from '../context/firebase'
+// import { firebaseContext } from '../context/firebase'
 
-export default function useAuthListener() {
-   const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('authUser'))
-   );
-   const {firebase} = useContext(firebaseContext);
+// export default function useAuthListener() {
+//    const [user, setUser] = useState();
+//    const {firebase} = useContext(firebaseContext);
 
-   useEffect(() => {
+//    useEffect(() => {
          
-    const listener = firebase.auth().onAuthStateChanged((authUser) => {
-        if(authUser) {
-            sessionStorage.setItem('authUser', JSON.stringify(authUser));
-            setUser(authUser);
-        }else {
-            sessionStorage.removeItem('authUser');
-            setUser(null);
-        } 
-    });
+//     const listener = firebase.auth().onAuthStateChanged((authUser) => {
+//         if(authUser) {
+//             setUser(authUser);
+//         }else {
+//             setUser(null);
+//         } 
+//     });
 
-    return () => listener();
-   }, []);
+//     return () => listener();
+//    }, []);
 
-   return { user };
-}
+//    return { user };
+// }

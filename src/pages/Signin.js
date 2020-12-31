@@ -1,40 +1,35 @@
 import React, {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom'
-import { firebaseContext } from '../context/firebase'
 import { FooterContainer } from '../containers/Footer';
 import { HeaderContainer2 } from '../containers/Header2'
 import { Form } from '../components'
-
+import { useAuth } from "../context/authContext"
 export default function Signin() {
+    const { signin } = useAuth(); 
     const history = useHistory();
-    const { firebase } = useContext(firebaseContext);
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
     const [error, setError] = useState('');
 
      // for checking valid email and pass
     const isInvalid = password === '' || email === '';
-    const handleSignin = (event) => {
+    async function handleSignin (event) {
         event.preventDefault(); 
-        firebase.auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(() => {
-            history.push("/browse");
-           // firebase waala kaam
-        })
-        .catch((error) => {
+            setError("")
+            await signin(email, password)
+            .then( () => {
+                console.log("route changed");
+                history.push("/browse")
+            })
+            .catch((error) => {
             setEmail('');
             setPassword('');
             setError(error.message);
-        })
-        
+            })
     }
 
-   
-
-
  return( 
- <>
+<>
     <HeaderContainer2>
         <Form>
             <Form.Title>Sign In </Form.Title>

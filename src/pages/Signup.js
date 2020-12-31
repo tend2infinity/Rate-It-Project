@@ -1,13 +1,13 @@
 import React, {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom'
-import { firebaseContext } from '../context/firebase'
 import { FooterContainer } from '../containers/Footer';
 import { HeaderContainer2 } from '../containers/Header2'
 import { Form } from '../components'
+import { useAuth } from "../context/authContext"
 
 export default function Signup() {
+    const { signup } = useAuth();
     const history = useHistory();
-    const { firebase } = useContext(firebaseContext);
     const [firstName, setFirstName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,30 +17,53 @@ export default function Signup() {
     // for checking valid email and pass
     const isInvalid = firstName === ''|| password === '' || email === '';
 
-    const handleSignup=(event) => {
+    async function handleSignup(event) {
         event.preventDefault();
-        firebase
-        .auth()
-        .createUserWithEmailAndPassword(email,password)
-        .then((result)=> 
-            result.user.updateProfile({
-                displayName: firstName,
+            setError("")
+            await signup(email, password)
+            .then((result) => {
+                console.log(result)
+                result.user.updateProfile({
+                    displayName: firstName,
+                })
+                .then(() =>{
+                    history.push("/browse")
+                    console.log(result);
+                })
+            }).catch((error) => {
+                setFirstName('');
+                setEmail('');
+                setPassword('');
+                setError(error.message);
             })
+            
+            
+        }
+        // catch(error){
+
+        // }
+        // firebase
+        // .auth()
+        // .createUserWithEmailAndPassword(email,password)
+        // .then((result)=> 
+        //     result.user.updateProfile({
+        //         displayName: firstName,
+        //     })
            
-            .then(() =>{
-                history.push("/")
-                console.log(result);
-            })
-        )
-        .catch((error) => {
-            setFirstName('');
-            setEmail('');
-            setPassword('');
-            setError(error.message);
-        })
+        //     .then(() =>{
+        //         history.push("/")
+        //         console.log(result);
+        //     })
+        // )
+        // .catch((error) => {
+        //     setFirstName('');
+        //     setEmail('');
+        //     setPassword('');
+        //     setError(error.message);
+        // })
        
 
-    }
+    
  return( 
     <>
     <HeaderContainer2>

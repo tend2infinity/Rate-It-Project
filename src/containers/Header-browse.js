@@ -1,22 +1,25 @@
 import React,{useState, useContext, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import {HeaderBrowse} from '../components';
-import { firebaseContext } from '../context/firebase';
-import {useAuthListener} from '../hooks';
+import { useAuth } from "../context/authContext"
+
+
 
 export function HeaderContainerBrowse({children}) {
-    const {user} = useAuthListener();
-    const { firebase } = useContext(firebaseContext);
-    function handleSignout (event) {
-        firebase.auth()
-        .signOut().then(() => {
-            console.log("logged out");
-        })
+    const { currentUser, logout} = useAuth()
+    const history = useHistory()
+    async function handleSignout (event) {
+       await logout()
+    //    .catch((error) => {
+    //        console.log(error);
+    //    })
+    console.log("logged out");
     }
     return (
             <HeaderBrowse.Inner>
                 <HeaderBrowse.Logo to="/" src="/pictures/logo.png" />
                 {
-                     <h3> {`Hii! ${user.displayName}`} </h3>
+                     <h3> {`Hii! ${currentUser.displayName}`} </h3>
                 }
                
                 <HeaderBrowse.Innercomp>
