@@ -10,10 +10,7 @@ import {useAuthListener} from '../hooks';
 
 
 export default function Browse() {
-<<<<<<< HEAD
       console.log("hello")
-=======
->>>>>>> bbf22826d0a436429fcbcec9f277e919e180df41
 
  return(
       <>

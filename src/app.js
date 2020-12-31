@@ -1,7 +1,8 @@
 import React , {useEffect, useState} from 'react';
 import {Home, Browse, Signin, Signup } from './pages'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import PrivateRoute from './handleUser/routes';
+import {PrivateRoute} from './handleUser/routes';
+import {UserRedirect} from './handleUser/routes';
 
 import { AuthProvider } from './context/authContext';
 
@@ -11,16 +12,16 @@ export function App() {
   return (
     
       <Router>
-        <AuthProvider>
+      <AuthProvider>
         <Switch>
 
         <PrivateRoute exact path="/browse" component={Browse} />
 
-        <Route exact path="/signin" component={Signin} />
+        <UserRedirect exact path="/signin" component={Signin} />
         
-        <Route exact path="/signup" component={Signup} />
+        <UserRedirect exact path="/signup" component={Signup} />
           
-        <Route exact path="/" component={Home} />
+        <UserRedirect exact path="/" component={Home} />
           
         </Switch>
       </AuthProvider>
