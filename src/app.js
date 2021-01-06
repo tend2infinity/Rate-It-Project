@@ -1,18 +1,36 @@
 import React , {useEffect, useState} from 'react';
 import {Home, Browse, Signin, Signup } from './pages'
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-import { IsUserRedirect, ProtectedRoute } from './handleUser/routes';
-import {useAuthListener} from './hooks';
-import {useDbListener} from './hooks';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {PrivateRoute} from './handleUser/routes';
+import {UserRedirect} from './handleUser/routes';
+
+import { AuthProvider } from './context/authContext';
 
 
 export function App() {
-  const {user} = useAuthListener();
-  useDbListener();
-  console.log(user);
+ 
   return (
-    <Router>
-      
+    
+      <Router>
+      <AuthProvider>
+        <Switch>
+
+        <PrivateRoute exact path="/browse" component={Browse} />
+
+        <UserRedirect exact path="/signin" component={Signin} />
+        
+        <UserRedirect exact path="/signup" component={Signup} />
+          
+        <UserRedirect exact path="/" component={Home} />
+          
+        </Switch>
+      </AuthProvider>
+    </Router>
+
+        /* <ProtectedRoute user={user} path="/browse" exact>
+          <Browse />
+          </ProtectedRoute> 
+
       <IsUserRedirect user={user} loggedInPath="/browse" path="/" exact>
       <Home />
       </IsUserRedirect>
@@ -24,16 +42,10 @@ export function App() {
       <IsUserRedirect user={user} loggedInPath="/browse" path="/signup" exact>
           <Signup />
       </IsUserRedirect>
+       */
       
-      <ProtectedRoute user={user} path="/browse" exact>
-      <Browse />
-      </ProtectedRoute>
-    
    
-     
-      
-       
-    </Router>
+    
   );
 }
 

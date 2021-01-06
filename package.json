@@ -9,7 +9,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "aos": "^2.3.4",
-    "firebase": "^8.1.1",
+    "firebase": "^8.2.1",
     "fuse.js": "^6.4.3",
     "movie-trailer": "^2.0.6",
     "normalize.css": "^8.0.1",
