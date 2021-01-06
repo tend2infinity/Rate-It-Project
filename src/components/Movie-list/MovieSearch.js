@@ -48,6 +48,8 @@ export default class MovieList extends React.Component{
 	
 	async callSearchFunction(e){
 		e.preventDefault();
+		if(this.state.searchValue!=null)
+		{
 		const url = `https://api.themoviedb.org/3/search/movie?api_key=cd74296e33afa394a19ac0d3043856f2&query=${this.state.searchValue}`;
 		const response = await fetch(url);
 		const data = await response.json();
@@ -56,6 +58,7 @@ export default class MovieList extends React.Component{
       nav1: this.slider1,
       nav2: this.slider2
        });
+       }
 	}
 	render() {
 

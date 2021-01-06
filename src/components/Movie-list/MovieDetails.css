@@ -61,7 +61,7 @@ flex-direction: column;
 {
 font-family: 'Cinzel', serif;
 font-size: 5vh;
-color: #44C8B6;
+color: cyan;
 padding: 1%;
 }
 .left h2
@@ -130,6 +130,7 @@ background-color: transparent;
 color: white;
 border-radius: 20px; 
 padding: 10px;
+margin: 1%;
 border: 2px solid white;
 width: 20%;
 transition: .2s ease-in-out;

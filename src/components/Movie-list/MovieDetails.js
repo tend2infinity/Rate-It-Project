@@ -10,6 +10,7 @@ export default class MovieDetails extends React.Component{
 		trailer: null,
 		image: null,
 		show: "none",
+		nominated: false,
 	}
 }
 
@@ -59,6 +60,11 @@ closeModal()
 	this.setState({show: "none"});
 };
 
+handleNomination()
+{
+	this.setState({nominated: !(this.state.nominated)});
+};
+
   
 	render() {
 		
@@ -83,8 +89,13 @@ const opts = {
     <br></br>
     
     <h2><b>Storyline: </b><br></br>{this.props.Overview}</h2>
+    <div className = "box">
     
     <button id="myBtn" className="trailer-button"  onClick={this.showModal.bind(this)}>Watch Trailer</button>
+    
+    <button id="myBtn" className="trailer-button"  onClick={this.handleNomination.bind(this)}>{(this.state.nominated)?"Remove":"Nominate"}</button>
+    </div>
+    
     <div id="myModal" className="modal" style={{display: this.state.show}}>
     
     <div className="modal-content">
