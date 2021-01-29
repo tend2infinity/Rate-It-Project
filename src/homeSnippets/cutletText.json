@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "title": "Enjoy watching movies?",
+        "subTitle": "What about nominating your favourite movies and making them win the awards that they truly deserve!!",
+        "image": "/pictures/homepage-cutlets/img1.jpg",
+        "direction": "row"
+    },
+    {
+        "id": 2,
+        "title": "So, What is Rate-It??",
+        "subTitle": "Rate-It is your new host for the Grand People's Choice Movie Award Show!! Its time for you people to start nominating your favourite movies , to make it to the top of the leaderboard!!",
+        "image": "/pictures/homepage-cutlets/img2.jpg",
+        "direction": "row-reverse"
+    },
+    {
+        "id":3,
+        "title":"Remember each vote counts!",
+        "subTitle": "You can make only 5 nominations per movie so nominate accordingly! ",
+        "image": "/pictures/homepage-cutlets/img3.jpg",
+        "direction": "row"
+    },
+    {
+        "id":4,
+        "title":"Make your vote fast!!",
+        "subTitle":"Make sure that your most loved movie ends in the top 10 to be eligible for the award night , share the link with other people too and spread the word!!",
+        "image":"/pictures/homepage-cutlets/img4.jpg",
+        "direction":"row-reverse"
+    }
+]
