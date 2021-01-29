@@ -9,28 +9,22 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "aos": "^2.3.4",
-<<<<<<< HEAD
     "axios": "^0.21.1",
     "cors": "^2.8.5",
-=======
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
     "firebase": "^8.2.1",
     "fuse.js": "^6.4.3",
     "movie-trailer": "^2.0.6",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-<<<<<<< HEAD
     "react-notifications-component": "^3.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-slick": "^0.27.13",
     "react-toastify": "^7.0.2",
-=======
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-slick": "^0.27.13",
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
     "react-youtube": "^7.13.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
@@ -61,10 +55,6 @@
     ]
   },
   "devDependencies": {},
-<<<<<<< HEAD
   "optionalDependencies": {},
   "proxy": "http://localhost:3001"
-=======
-  "optionalDependencies": {}
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 }

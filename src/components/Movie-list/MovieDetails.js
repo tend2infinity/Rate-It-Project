@@ -1,7 +1,6 @@
 import React from 'react';
 import movieTrailer from 'movie-trailer';
 import './MovieDetails.css';
-<<<<<<< HEAD
 import { useAuth } from "../../context/authContext"
 import axios from 'axios';
  import { ToastContainer, toast } from 'react-toastify';
@@ -10,16 +9,11 @@ import axios from 'axios';
 export default function MovieDetails(props){
 	
 const { currentUser, logout} = useAuth()
-=======
-
-export default function MovieDetails(props){
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 
 const [nominated, setNominated] = React.useState(false);
 const [trailer, setTrailer] = React.useState(null);
 const [show, setShow] = React.useState("none");
 
-<<<<<<< HEAD
 React.useEffect(() => {
 		  getList();
     }, [])
@@ -31,9 +25,6 @@ async function getList(){
       )
       setNominated(response.data);
  }
-=======
-
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 
 
 const showModal = () => 
@@ -54,7 +45,6 @@ const closeModal = () =>
 	setShow("none");
 };
 
-<<<<<<< HEAD
 async function handleNomination(){
 	setNominated(!(nominated));
 	
@@ -101,15 +91,7 @@ async function handleNomination(){
   console.log(`😱 Axios request failed: ${e}`);
 }
 	}
-	
-	
-	
-=======
-const handleNomination = () => 
-{
-	setNominated(!(nominated));
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
-};
+}
 
 
 
@@ -117,10 +99,7 @@ const handleNomination = () =>
 
 
     return (
-<<<<<<< HEAD
     <>
-=======
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
     <div className="outer" style = {{backgroundImage: `url(https://image.tmdb.org/t/p/original${props.Poster})`}}>
     
     <div className="left">
@@ -157,9 +136,6 @@ const handleNomination = () =>
    </div>
    
    </div>
-<<<<<<< HEAD
    </>
-=======
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
     );
 }

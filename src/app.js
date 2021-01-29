@@ -1,9 +1,5 @@
 import React , {useEffect, useState} from 'react';
-<<<<<<< HEAD
 import {Home, Browse, Signin, Signup, Nomination } from './pages'
-=======
-import {Home, Browse, Signin, Signup } from './pages'
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {PrivateRoute} from './handleUser/routes';
 import {UserRedirect} from './handleUser/routes';
@@ -20,11 +16,8 @@ export function App() {
         <Switch>
 
         <PrivateRoute exact path="/browse" component={Browse} />
-<<<<<<< HEAD
         
         <PrivateRoute exact path="/mynominations" component={Nomination} />
-=======
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 
         <UserRedirect exact path="/signin" component={Signin} />
         

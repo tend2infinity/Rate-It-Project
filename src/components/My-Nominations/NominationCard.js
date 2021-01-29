@@ -1,11 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-<<<<<<< HEAD
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-=======
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 
 export default class NominationCard extends React.Component{
 
@@ -25,7 +22,6 @@ async componentDidMount(){
 		const url = `https://api.themoviedb.org/3/movie/${this.props.id}?api_key=cd74296e33afa394a19ac0d3043856f2`;
 		const response = await fetch(url);
 		const data = await response.json();
-<<<<<<< HEAD
 		this.setState({image: data.poster_path,loading: false, title:data.title});
 }
 
@@ -66,20 +62,7 @@ async NominationToggle()
   console.log(`😱 Axios request failed: ${e}`);
 }
 	}
-
-
-
-=======
-		console.log(data);
-		this.setState({image: data.poster_path,loading: false, title:data.title});
 }
-
-NominationToggle()
-{
- this.setState({nominated:!(this.state.nominated)});
- console.log(this.state.nominated);	
->>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
-};
 
   
 	render() {
