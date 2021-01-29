@@ -4,7 +4,10 @@ import MovieDetails from './MovieDetails.js';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+<<<<<<< HEAD
 import axios from 'axios';
+=======
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 import MovieTop from './MovieTop.js';
 import MovieSearch from './MovieSearch.js';
 import './MovieList.css';
@@ -24,7 +27,10 @@ export default class MovieList extends React.Component{
 		const response = await fetch(url);
 		const data = await response.json();
 		this.setState({movie: data.results,loading: false});
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 		this.setState({
       nav1: this.slider1,
       nav2: this.slider2
@@ -51,7 +57,11 @@ export default class MovieList extends React.Component{
       
            </Slider>
            
+<<<<<<< HEAD
           <div style={{zIndex:1}}>
+=======
+          <div style={{zIndex:2}}>
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 		  <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}

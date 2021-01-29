@@ -2,14 +2,20 @@ import React,{useState, useContext, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import {HeaderBrowse} from '../components';
 import { useAuth } from "../context/authContext"
+<<<<<<< HEAD
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+=======
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 
 
 
 export function HeaderContainerBrowse({children}) {
     const { currentUser, logout} = useAuth()
+<<<<<<< HEAD
 console.log(currentUser);
+=======
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
     const history = useHistory()
     async function handleSignout (event) {
        await logout()
@@ -19,6 +25,7 @@ console.log(currentUser);
     console.log("logged out");
     }
     return (
+<<<<<<< HEAD
     <>
     <ToastContainer
 position="top-right"
@@ -33,6 +40,8 @@ pauseOnHover
 />
 {/* Same as */}
 <ToastContainer />
+=======
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
             <HeaderBrowse.Inner>
                 <HeaderBrowse.Logo to="/" src="/pictures/logo.png" />
                 {
@@ -47,7 +56,13 @@ pauseOnHover
                 </HeaderBrowse.Innercomp>
                 
             </HeaderBrowse.Inner> 
+<<<<<<< HEAD
             </>
 
     )
 }
+=======
+
+    )
+}
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf

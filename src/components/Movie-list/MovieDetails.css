@@ -27,7 +27,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+<<<<<<< HEAD
   z-index: 1;
+=======
+  z-index: 2;
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
   width: 80%;
   padding: 20px;
   text-align: center;
@@ -49,7 +53,11 @@ display: flex;
 width: 60%;
 padding: 1%;
 flex-direction: column;
+<<<<<<< HEAD
   z-index: 1;
+=======
+  z-index: 2;
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
   backdrop-filter: blur(16px);
   color: white;
   background-color: rgb(0,0,0); /* Fallback color */
@@ -75,7 +83,11 @@ font-weight: normal;
 display: flex;
 width: 40%;
 box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+<<<<<<< HEAD
 z-index: 1;
+=======
+z-index: 2;
+>>>>>>> 61da1fd549f85e9eab923b97f9790ae22cf072cf
 backdrop-filter: blur(8px);
 }
 
