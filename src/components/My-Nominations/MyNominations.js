@@ -8,9 +8,11 @@ export default class MyNominations extends React.Component{
 	constructor(props) {
     super(props);
     }
+    
 
   
 	render() {
+    // console.log(this.props)
 
     return (
     <div style={{display:"flex", flexDirection:"row" , justifyContent:"center" , flexBasis: "30%" , flexWrap: "wrap"}}>
