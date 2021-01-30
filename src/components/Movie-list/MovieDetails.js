@@ -46,7 +46,6 @@ const closeModal = () =>
 };
 
 async function handleNomination(){
-	setNominated(!(nominated));
 	
 	if(nominated===false)
 	{
@@ -67,8 +66,9 @@ async function handleNomination(){
       try {
   const response = await axios.post('http://localhost:3001/browse/add', book);
   toast.success("Movie Nominated!");
+  setNominated(!(nominated));
 } catch (e) {
-  console.log(`😱 Axios request failed: ${e}`);
+  alert(`😱 Axios request failed: ${e}`);
 }
 	}
 	else
@@ -87,8 +87,9 @@ async function handleNomination(){
           { params: {idu: currentUser.email , idm:props.id }}
       )
       toast.error("Movie Removed");
+      setNominated(!(nominated));
      } catch (e) {
-  console.log(`😱 Axios request failed: ${e}`);
+  alert(`😱 Axios request failed: ${e}`);
 }
 	}
 }
