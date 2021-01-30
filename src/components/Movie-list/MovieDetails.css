@@ -14,6 +14,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* background:linear-gradient(to right, #000 30%, transparent 70%) ; */
 }
 
 /* Position text in the middle of the page/image */
@@ -28,15 +29,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  width: 80%;
+  width: 60%;
   padding: 20px;
   text-align: center;
 }
 .outer
 {
+
 display: flex;
 flex-direction: row;
-height: 70vh;
+height: 80vh;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -47,10 +49,10 @@ background-size: cover;
 {
 display: flex;
 width: 60%;
-padding: 1%;
+padding: 3%;
 flex-direction: column;
   z-index: 1;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
   color: white;
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
@@ -60,23 +62,26 @@ flex-direction: column;
 .left h1
 {
 font-family: 'Cinzel', serif;
-font-size: 5vh;
-color: cyan;
+font-weight: 800;
+font-size: 4.5vh;
+color: white;
 padding: 1%;
 }
 .left h2
 {
 font-family: 'Work Sans', sans-serif;
-font-weight: normal;
+font-weight:200;
+font-size: large;
+line-height: 1.6;
 }
 
 .right
 {
 display: flex;
-width: 40%;
+width: 45%;
 box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 z-index: 1;
-backdrop-filter: blur(8px);
+backdrop-filter: blur(18px);
 }
 
 .right img

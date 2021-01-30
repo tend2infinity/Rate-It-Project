@@ -7,8 +7,7 @@ import 'aos/dist/aos.css';
 
  
 
-export default function LeaderboardContainer({movieID, votes}) {
-    console.log("hii")
+export function LeaderboardContainer({movieID, vote}) {
     const [title,setTitle] = useState("")
     const [image,setImage] = useState("")
     const [loading,setLoading] = useState(true)
@@ -18,22 +17,28 @@ export default function LeaderboardContainer({movieID, votes}) {
     useEffect(() => {
         console.log("props")
         const url = `https://api.themoviedb.org/3/movie/${movieID}?api_key=cd74296e33afa394a19ac0d3043856f2`;
-		const response =  fetch(url);
-        const data = response.json();
-        setImage(data.poster_path)
-        setLoading(false)
-        setTitle(data.title)
-        setOverview(data.overview)
+        fetch(url) 
+        .then(response => response.json() )
+        .then((result) => {
+            console.log(result)
+            setImage(result.poster_path)
+            setLoading(false)
+            setTitle(result.title)
+            setOverview(result.overview)
+        }).catch(err => {
+            console.log(err)
+        })
+        
 
         AOS.init({duration: 1500, delay: 500});
     }, [])
   return (
-    
+      <div>
       <Leaderboard.Container>
         <Leaderboard key={movieID} direction="row-reverse" >
           <Leaderboard.Pane>
             <Leaderboard.Title data-aos="fade-up">{title}</Leaderboard.Title>
-            <Leaderboard.SubTitle data-aos="fade-up">Votes: {votes}</Leaderboard.SubTitle>
+            <Leaderboard.SubTitle data-aos="fade-up">Votes: {vote} </Leaderboard.SubTitle>
             <Leaderboard.SubTitle data-aos="fade-up">{overview}</Leaderboard.SubTitle>
           </Leaderboard.Pane> 
           <Leaderboard.Pane>
@@ -41,6 +46,9 @@ export default function LeaderboardContainer({movieID, votes}) {
           </Leaderboard.Pane>
         </Leaderboard>
       </Leaderboard.Container>
+      </div>
+     
+
   );
 }
 

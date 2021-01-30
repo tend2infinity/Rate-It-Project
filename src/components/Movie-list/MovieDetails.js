@@ -62,20 +62,32 @@ async function handleNomination(){
       )
      if(response1.data.length<5)
      {
-      
-      try {
-  const response = await axios.post('http://localhost:3001/browse/add', book);
-  toast.success("Movie Nominated!");
-  setNominated(!(nominated));
-} catch (e) {
-  alert(`😱 Axios request failed: ${e}`);
-}
-	}
-	else
-	{
-		console.log("Yes");
-		toast.error("Maximum limit of 5 movies reached");
-	}
+      const result = await axios.get("http://localhost:3001/browse/find",
+      { params: {email: currentUser.email,id: props.id}}
+      )
+        if(result.data===true)
+        {
+          toast.error("Already nominated")
+        }
+        else{
+          try {
+            await axios.post('http://localhost:3001/browse/add', book)
+            .then((result) => {
+              console.log(result);
+              toast.success("Movie Nominated!");
+              setNominated(!(nominated));
+            }) 
+          } catch (e) {
+            alert(`😱 Axios request failed: ${e}`);
+          }
+            }
+            
+        }
+       else{
+        console.log("Max limit reached");
+        toast.error("Maximum limit of 5 movies reached");
+      }
+  
 }
 	
 	/*Remove Nomination*/
@@ -100,7 +112,7 @@ async function handleNomination(){
 
 
     return (
-    <>
+    <div>
     <div className="outer" style = {{backgroundImage: `url(https://image.tmdb.org/t/p/original${props.Poster})`}}>
     
     <div className="left">
@@ -137,6 +149,6 @@ async function handleNomination(){
    </div>
    
    </div>
-   </>
+   </div>
     );
 }

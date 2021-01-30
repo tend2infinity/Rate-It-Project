@@ -1,5 +1,5 @@
 import React from 'react'
-import { Inner,Container,Pane,Title,SubTitle,Image,Item  } from './styles/Leaderboard.js';
+import { Inner,Container,Pane,Title,SubTitle,Image,Item,Button  } from './styles/Leaderboard.js';
 
 function Leaderboard({ children, direction = 'row', ...restProps}) {
     return (
@@ -26,6 +26,9 @@ Leaderboard.SubTitle = function LeaderboardSubTitle({ children , ...restProps}) 
 }
 Leaderboard.Image = function LeaderboardImage({ ...restProps}) {
     return <Image {...restProps} />;
+}
+Leaderboard.Button = function HeaderButton({ children, ...restProps}){
+    return <Button {...restProps}>{children} </Button>
 }
 
 
