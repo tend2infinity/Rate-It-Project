@@ -49,7 +49,7 @@ You can search your favourite movie in the search box and nominate that as well!
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit14.JPG)
 
 ### My Nominations
-Every user is allowed to nominate atmost five movies and the nominated movies can be viewed in the "Nomination" Tab. You can obviously remove those movies which you do not wish to have in that list. A toast appears every time you add or remove a movie moreover a single user cannot nominate more than 5 movies, if he tries then a toast will get displayed showing "max limit reached".
+Every user is allowed to nominate atmost five movies and the nominated movies can be viewed in the "Nomination" Tab. If you try to nominate more than five movies then a toast is displayed showing "Already nominated". You can obviously remove those movies which you do not wish to have in that list. A toast appears every time you add or remove a movie .
 <br>
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit11.JPG)
 
