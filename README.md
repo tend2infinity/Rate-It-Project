@@ -1,6 +1,6 @@
 # RateIt!
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ### A Real-world online movie rating app where you can nominate your favourite movies and get them to the top of the leaderboard! 
 ## Main Features
@@ -128,6 +128,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://portfolio-shambhavi.netlify.app/"><img src="https://avatars.githubusercontent.com/u/56017960?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shambhavi</b></sub></a><br /><a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Code">💻</a> <a href="#design-savi-1311" title="Design">🎨</a> <a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Documentation">📖</a> <a href="#data-savi-1311" title="Data">🔣</a></td>
+    <td align="center"><a href="https://github.com/tend2infinity"><img src="https://avatars.githubusercontent.com/u/61948033?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Somya S. Singh</b></sub></a><br /><a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=tend2infinity" title="Code">💻</a> <a href="#design-tend2infinity" title="Design">🎨</a> <a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=tend2infinity" title="Documentation">📖</a> <a href="#data-tend2infinity" title="Data">🔣</a></td>
   </tr>
 </table>
 
