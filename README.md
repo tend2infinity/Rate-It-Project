@@ -113,26 +113,4 @@ Front-end [Repository](https://github.com/tend2infinity/Rate-It-Project)
 Back-end [Repository](https://github.com/savi-1311/Rate-It-Backend) (Do check out this repository as well!)
 
 ***
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-     <td align="center"><a href="https://github.com/abhi211199"><img src="https://avatars.githubusercontent.com/u/36303692?s=460&u=274d0456007c003a2a9144490a9c24420810004b&v=4" width="100px;" alt=""/><br /><sub><b>Abhishek Garain</b></sub></a><br /><a href="#design-tend2infinity" title="Design">🧑‍🏫 👀</a></td>
-    <td align="center"><a href="https://portfolio-shambhavi.netlify.app/"><img src="https://avatars.githubusercontent.com/u/56017960?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shambhavi</b></sub></a><br /><a href="https://github.com/savi-1311/Rate-It-Backend/commits?author=savi-1311" title="Code">💻 🎨 🔣 📖</a></td>
-    <td align="center"><a href="https://github.com/tend2infinity"><img src="https://avatars.githubusercontent.com/u/61948033?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Somya S. Singh</b></sub></a><br /><a href="#design-tend2infinity" title="Design">💻 🎨 🖋 📖</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
+__Special Mention:__ [TMDB API](https://developers.themoviedb.org/3) for providing the amazing database of movies.
