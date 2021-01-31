@@ -16,7 +16,7 @@ Back-end [Repository](https://github.com/savi-1311/Rate-It-Backend) (Do check ou
 __Special Mention:__ [TMDB API](https://developers.themoviedb.org/3) for providing the amazing database of movies.
 ## Main Features
 ### Landing Page
-The landing page gives a brief introduction about this app . It has the options of Signup or Login depending upon wheter you are an old user or a new one . The syling of all the pages inside the app is done using "styled-components".
+The landing page gives a brief introduction about this app . It has the options of Signup or Login depending upon wheter you are an old user or a new one . The syling of all the pages inside the app is done using "styled-components". AOS library (animate on scroll) is used to animate the content while scrolling!
 
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit1.JPG)
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit2.JPG)
@@ -31,7 +31,7 @@ Once you are logged in, the top navbar will contain your username and three diff
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit6.JPG)
 
 ### Movie-List
-All the logged in users are directed to the movie list page where you can browse different movies from different categories . The movie name, a short description and the release date is also visible in that card. All these results are fetched from "TMDB API". You can obviously nominate any movie using the nominate button and if its already nominated, you can remove it from your nominations. Once you nominate a movie the "movieID" and the "user" is registered into our mongoDb database .
+All the logged in users are directed to the movie list page where you can browse different movies from different categories . The movie name, a short description and the release date is also visible in that card. All these results are fetched from "TMDB API". You can obviously nominate any movie using the nominate button and if its already nominated, you can remove it from your nominations. Once you nominate a movie the "movieID" and the "user" is registered into our mongoDb database. The same movie cannot be nominated twice, if anyone does that then a toast will get displayed showing "Already nominated"!
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit7.JPG)
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit9.JPG)
 
@@ -44,7 +44,7 @@ You can search your favourite movie in the search box and nominate that as well!
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit14.JPG)
 
 ### My Nominations
-Every user is allowed to nominate atmost five movies and the nominated movies can be viewed in the "Nomination" Tab. You can obviously remove those movies which you do not wish to have in that list.
+Every user is allowed to nominate atmost five movies and the nominated movies can be viewed in the "Nomination" Tab. You can obviously remove those movies which you do not wish to have in that list. A toast appears every time you add or remove a movie moreover a single user cannot nominate more than 5 movies, if he tries then a toast will get displayed showing "max limit reached".
 ![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit11.JPG)
 
 ### Leaderboard
@@ -63,7 +63,7 @@ The footer of every page contains developer contact, so that for any bug anyone 
 <p align="left"> <a href="https://expressjs.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg" alt="express" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://img.icons8.com/color/48/000000/html-5.png"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://img.icons8.com/color/48/000000/javascript.png"/> </a> <a href="https://www.mongodb.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="mongodb" width="50" height="50"/> </a> <a href="https://nodejs.org" target="_blank"> <img src="https://img.icons8.com/color/48/000000/nodejs.png"/> </a> <a href="https://postman.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.netlify.com" target="_blank"> <img src="https://www.netlify.com/img/press/logos/logomark.png" alt="Netlify" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React" width="60" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank"> <img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" alt="Firebase" width="30" height="40"/> </a> <a href="https://material-ui.com" target="_blank"> <img src="https://material-ui.com/static/logo.png" alt="Material UI" width="50" height="60"/> </a></p>
 <br>
 
-* __Frontend:__ Reactjs, Javascript, MaterialUI, Slick-Slider, HTML, CSS
+* __Frontend:__ Reactjs, Javascript, MaterialUI, Slick-Slider, HTML, CSS, Styled-components
 * __Backend:__ Firebase, Nodejs, Expressjs
 * __Databse:__ MongoDB
 * __Deployment:__ Heroku, Netlify
