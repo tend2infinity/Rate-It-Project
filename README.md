@@ -1,5 +1,46 @@
-## A Real-world online movie rating app!!
-### Will update the readme soon!!
+# RateIt!
+### A Real-world online movie rating app where you can nominate your favourite movies and get them to the top of the leaderboard! 
+## Main Features
+### Landing Page
+The landing page gives a brief introduction about this app . It has the options of Signup or Login depending upon wheter you are an old user or a new one . The syling of all the pages inside the app is done using "styled-components".
+
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit1.JPG)
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit2.JPG)
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit3.JPG)
+
+### Authentication
+Firebase authentication service is used for signin and signup features using email, username and password .
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit5.JPG)
+
+### Top Navbar
+Once you are logged in, the top navbar will contain your username and three different buttons for navigation namely "Nomination", "Leaderboard" and "Logout".
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit6.JPG)
+
+### Movie-List
+All the logged in users are directed to the movie list page where you can browse different movies from different categories . The movie name, a short description and the release date is also visible in that card. All these results are fetched from "TMDB API". You can obviously nominate any movie using the nominate button and if its already nominated, you can remove it from your nominations. Once you nominate a movie the "movieID" and the "user" is registered into our mongoDb database .
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit7.JPG)
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit9.JPG)
+
+### Movie Tralier
+Every movie card has a "Watch Traler" button using that you can view the trailer of that movie which is available on youtube . This feature is implemented using "movie-trailer" package.
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit8.JPG)
+
+### Movie Search
+You can search your favourite movie in the search box and nominate that as well!
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit14.JPG)
+
+### My Nominations
+Every user is allowed to nominate atmost five movies and the nominated movies can be viewed in the "Nomination" Tab. You can obviously remove those movies which you do not wish to have in that list.
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit11.JPG)
+
+### Leaderboard
+The leaderboard contains the top voted movies by our community which is sorted in descending order of votes.
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit12.JPG)
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit13.JPG)
+
+### Footer
+The footer of every page contains developer contact, so that for any bug anyone can reach us immediately!
+![](https://github.com/tend2infinity/Rate-It-Project/blob/master/public/screenshots/rateit3.JPG)
 
 
 ***
