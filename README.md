@@ -13,3 +13,44 @@
 * __Databse:__ MongoDB
 * __Deployment:__ Heroku, Netlify
 * __Tools:__ Git
+
+### Setting Up the Project 🔧
+
+* __Frontend__
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/tend2infinity/Rate-It-Project
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Create a .env file using the template .env.template and add values accordingly.
+
+* __Backend__
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/savi-1311/Rate-It-Backend
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Create a .env file using the template .env.template and add values accordingly.
+   
+### Usage
+
+1.  Switch to the Backend folder and run the backend server
+    ```sh 
+    npm start 
+    ```
+    
+2.  Switch to the Frontend folder and run the frontend server
+    ```sh 
+    npm start 
+    ```
+    
+    Make sure you start the Backend server before the Frontend server to avoid unnecessary errors.
+***
