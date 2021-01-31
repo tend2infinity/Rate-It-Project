@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "savi-1311",
+      "name": "Shambhavi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56017960?v=4",
+      "profile": "https://portfolio-shambhavi.netlify.app/",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "data"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Rate-It-Project",
+  "projectOwner": "tend2infinity",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

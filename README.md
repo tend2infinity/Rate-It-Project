@@ -1,4 +1,7 @@
 # RateIt!
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ### A Real-world online movie rating app where you can nominate your favourite movies and get them to the top of the leaderboard! 
 ## Main Features
 ### Landing Page
@@ -114,3 +117,23 @@ Back-end [Repository](https://github.com/savi-1311/Rate-It-Backend) (Do check ou
 
 ***
 __Special Mention:__ [TMDB API](https://developers.themoviedb.org/3) for providing the amazing database of movies.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://portfolio-shambhavi.netlify.app/"><img src="https://avatars.githubusercontent.com/u/56017960?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shambhavi</b></sub></a><br /><a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Code">💻</a> <a href="#design-savi-1311" title="Design">🎨</a> <a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Documentation">📖</a> <a href="#data-savi-1311" title="Data">🔣</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
