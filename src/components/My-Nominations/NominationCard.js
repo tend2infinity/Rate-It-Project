@@ -42,7 +42,7 @@ async NominationToggle()
     console.log('Movie Nomination Started')
       
       try {
-  const response = await axios.post('http://localhost:3001/browse/add', book);
+  const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, book);
   toast.success("Movie Nominated!");
 } catch (e) {
   console.log(`😱 Axios request failed: ${e}`);
@@ -54,7 +54,7 @@ async NominationToggle()
 	{
 		try {
 	const response =
-      await axios.get("http://localhost:3001/browse/remove",
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/remove`,
           { params: {idu: this.props.email , idm:this.props.id }}
       )
       toast.error("Movie Removed");

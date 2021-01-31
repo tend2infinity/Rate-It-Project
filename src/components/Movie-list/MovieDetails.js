@@ -20,7 +20,7 @@ React.useEffect(() => {
 
 async function getList(){
     const response =
-      await axios.get("http://localhost:3001/browse/find",
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/find`,
           { params: {email: currentUser.email,id: props.id}}
       )
       setNominated(response.data);
@@ -57,18 +57,18 @@ async function handleNomination(){
     };
     
     const response1 =
-      await axios.get("http://localhost:3001/browse/list",
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/list`,
           { params: {email: currentUser.email}}
       )
      if(response1.data.length<5)
      {
       
       try {
-  const response = await axios.post('http://localhost:3001/browse/add', book);
+  const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, book);
   toast.success("Movie Nominated!");
   setNominated(!(nominated));
 } catch (e) {
-  alert(`😱 Axios request failed: ${e}`);
+  toast.error(`😱 Axios request failed: ${e}`);
 }
 	}
 	else
@@ -83,13 +83,13 @@ async function handleNomination(){
 	{
 		try {
 	const response =
-      await axios.get("http://localhost:3001/browse/remove",
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/remove`,
           { params: {idu: currentUser.email , idm:props.id }}
       )
       toast.error("Movie Removed");
       setNominated(!(nominated));
      } catch (e) {
-  alert(`😱 Axios request failed: ${e}`);
+  toast.error(`😱 Axios request failed: ${e}`);
 }
 	}
 }

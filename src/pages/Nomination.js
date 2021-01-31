@@ -20,7 +20,7 @@ export default function Nomination() {
     async function getList(){
 		var array=[];
     const response =
-      await axios.get("http://localhost:3001/browse/list",
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/list`,
           { params: {email: currentUser.email}}
       )
       response.data.map(name => (
@@ -36,6 +36,7 @@ export default function Nomination() {
       <HeaderContainerBrowse />
       <MyNominations movie={movie} email={currentUser.email}/>
       <FooterContainer />
+
       </>
       )
 }
