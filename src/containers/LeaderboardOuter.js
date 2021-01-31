@@ -17,13 +17,15 @@ export function LeaderboardOuterContainer({movie}) {
         AOS.init({duration: 1500, delay: 500});
     }, [])
   return (
+    <>
+    <h1 style={{textAlign: "center" }}>The Top Movies nominated by our community!</h1>
     <div style={{display:"flex", flexDirection:"row" , justifyContent:"center" , flexBasis: "40%" , flexWrap: "wrap"}}>
-      <h1 style={{textAlign: "center" }}>The Top Movies nominated by our community!</h1>
        { movie.map((item) => {
         //  console.log(item.votes);
         return (<LeaderboardContainer movieID={item.movieID} vote={item.votes}/>)
     })}
     </div>
+    </>
   );
 }
 

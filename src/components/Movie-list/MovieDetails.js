@@ -56,55 +56,37 @@ async function handleNomination(){
       movieID
     };
     
-    const response1 =
-      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/list`,
-          { params: {email: currentUser.email}}
-      )
-     if(response1.data.length<5)
-     {
-<<<<<<< HEAD
-      
-      try {
-  const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, book);
-  toast.success("Movie Nominated!");
-  setNominated(!(nominated));
-} catch (e) {
-  toast.error(`😱 Axios request failed: ${e}`);
-}
-	}
-	else
-	{
-		console.log("Yes");
-		toast.error("Maximum limit of 5 movies reached");
-	}
-=======
-      const result = await axios.get("http://localhost:3001/browse/find",
-      { params: {email: currentUser.email,id: props.id}}
-      )
-        if(result.data===true)
-        {
-          toast.error("Already nominated")
-        }
-        else{
-          try {
-            await axios.post('http://localhost:3001/browse/add', book)
-            .then((result) => {
-              console.log(result);
-              toast.success("Movie Nominated!");
-              setNominated(!(nominated));
-            }) 
-          } catch (e) {
-            alert(`😱 Axios request failed: ${e}`);
-          }
-            }
-            
-        }
-       else{
-        console.log("Max limit reached");
-        toast.error("Maximum limit of 5 movies reached");
+  const response1 =
+    await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/list`,
+        { params: {email: currentUser.email}}
+    )
+   if(response1.data.length<5)
+   {
+    const result = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/find`,
+    { params: {email: currentUser.email,id: props.id}}
+    )
+      if(result.data===true)
+      {
+        toast.error("Already nominated")
       }
-  
->>>>>>> 438548e0c0070abefc591bf689519b0a64fb7a17
+      else{
+        try {
+          await axios.post(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, book)
+          .then((result) => {
+            console.log(result);
+            toast.success("Movie Nominated!");
+            setNominated(!(nominated));
+          }) 
+        } catch (e) {
+          alert(`😱 Axios request failed: ${e}`);
+        }
+          }
+          
+      }
+     else{
+      console.log("Max limit reached");
+      toast.error("Maximum limit of 5 movies reached");
+    }
 }
 	
 	/*Remove Nomination*/

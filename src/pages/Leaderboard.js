@@ -18,7 +18,7 @@ export default function LeaderBoard() {
     async function getList(){
 		var array=[];
     const response =
-      await axios.get("http://localhost:3001/browse/leaderboard",
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/leaderboard`,
       )
       response.data.map(item=> (
          array.push(item)

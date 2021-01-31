@@ -15,14 +15,14 @@ export default class MyNominations extends React.Component{
     // console.log(this.props)
 
     return (
-
-    <div style={{display:"flex", flexDirection:"row" , justifyContent:"center" , flexBasis: "30%" , flexWrap: "wrap"}}>
-      <h1 style={{textAlign: "center" }}>The Movies nominated by you!</h1>
-    {this.props.movie.map(name => (
-          <NominationCard id = {name} email = {this.props.email}/>
-      ))}
-    </div>
-    
+        <>
+  <h1 style={{textAlign: "center" }}>The Movies nominated by you!</h1>
+      <div style={{display:"flex", flexDirection:"row" , justifyContent:"center" , flexBasis: "30%" , flexWrap: "wrap"}}>
+      {this.props.movie.map(name => (
+            <NominationCard id = {name} email = {this.props.email}/>
+        ))}
+      </div>
+    </>
     );
   }
 }

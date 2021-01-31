@@ -51,7 +51,7 @@ export default class MovieList extends React.Component{
            </Slider>
            
           <div style={{zIndex:1}}>
-		  <Slider
+		     <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
           slidesToShow={11}
