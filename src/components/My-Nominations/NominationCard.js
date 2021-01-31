@@ -35,16 +35,11 @@ async NominationToggle()
  
  if(this.state.nominated===false)
 	{
-		const userID =this.props.email;
-		const movieID = this.props.id;
-		const book = {
-      userID,
-      movieID
-    };
     console.log('Movie Nomination Started')
       
       try {
-  const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, book);
+  const response = 
+  await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, { params: {userID: this.props.email,movieID: this.props.id}});
   toast.success("Movie Nominated!");
 } catch (e) {
   console.log(`😱 Axios request failed: ${e}`);

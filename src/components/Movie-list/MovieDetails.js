@@ -49,12 +49,6 @@ async function handleNomination(){
 	
 	if(nominated===false)
 	{
-		const userID =currentUser.email;
-		const movieID = props.id;
-		const book = {
-      userID,
-      movieID
-    };
     
   const response1 =
     await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/list`,
@@ -71,12 +65,11 @@ async function handleNomination(){
       }
       else{
         try {
-          await axios.post(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, book)
-          .then((result) => {
+          const result = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/browse/add`, 
+            { params: {userID: currentUser.email, movieID: props.id}})
             console.log(result);
             toast.success("Movie Nominated!");
             setNominated(!(nominated));
-          }) 
         } catch (e) {
           alert(`😱 Axios request failed: ${e}`);
         }
