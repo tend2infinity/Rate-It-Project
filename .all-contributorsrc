@@ -29,6 +29,16 @@
         "data",
         "content"
       ]
+    },
+    {
+      "login": "abhi211199",
+      "name": "Abhishek Garain",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36303692?v=4",
+      "profile": "http://abhi-blogs.web.app",
+      "contributions": [
+        "mentoring",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
