@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "title": "Movie 1",
+        "subTitle": "Something about Movie 1",
+        "image": "/pictures/homepage-cutlets/img1.jpg",
+        "direction": "row-reverse"
+    },
+    {
+        "id": 2,
+        "title": "Movie 2",
+        "subTitle": "Something about Movie 2",
+        "image": "/pictures/homepage-cutlets/img2.jpg",
+        "direction": "row-reverse"
+    },
+    {
+        "id":3,
+        "title":"Movie 3",
+        "subTitle": "Something about Movie 3",
+        "image": "/pictures/homepage-cutlets/img3.jpg",
+        "direction": "row-reverse"
+    },
+    {
+        "id":4,
+        "title":"Movie 4",
+        "subTitle":"Something about Movie 4",
+        "image":"/pictures/homepage-cutlets/img4.jpg",
+        "direction":"row-reverse"
+    }
+]

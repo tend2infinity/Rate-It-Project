@@ -1,5 +1,5 @@
 import React , {useEffect, useState} from 'react';
-import {Home, Browse, Signin, Signup, Nomination } from './pages'
+import {Home, Browse, Signin, Signup, Nomination, LeaderBoard  } from './pages'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {PrivateRoute} from './handleUser/routes';
 import {UserRedirect} from './handleUser/routes';
@@ -18,6 +18,8 @@ export function App() {
         <PrivateRoute exact path="/browse" component={Browse} />
         
         <PrivateRoute exact path="/mynominations" component={Nomination} />
+        
+        <PrivateRoute exact path="/leaderboard" component={LeaderBoard} />
 
         <UserRedirect exact path="/signin" component={Signin} />
         
