@@ -3,6 +3,17 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ### A Real-world online movie rating app where you can nominate your favourite movies and get them to the top of the leaderboard! 
+
+### 🔗 Live Demo
+
+The website is Hosted [Here](https://rate-it-project.netlify.app)
+
+Front-end [Repository](https://github.com/tend2infinity/Rate-It-Project)
+
+Back-end [Repository](https://github.com/savi-1311/Rate-It-Backend) (Do check out this repository as well!)
+
+***
+__Special Mention:__ [TMDB API](https://developers.themoviedb.org/3) for providing the amazing database of movies.
 ## Main Features
 ### Landing Page
 The landing page gives a brief introduction about this app . It has the options of Signup or Login depending upon wheter you are an old user or a new one . The syling of all the pages inside the app is done using "styled-components".
@@ -106,17 +117,6 @@ The footer of every page contains developer contact, so that for any bug anyone 
     
     Make sure you start the Backend server before the Frontend server to avoid unnecessary errors.
 ***
-
-### 🔗 Live Demo
-
-The website is Hosted [Here](https://rate-it-project.netlify.app)
-
-Front-end [Repository](https://github.com/tend2infinity/Rate-It-Project)
-
-Back-end [Repository](https://github.com/savi-1311/Rate-It-Backend) (Do check out this repository as well!)
-
-***
-__Special Mention:__ [TMDB API](https://developers.themoviedb.org/3) for providing the amazing database of movies.
 
 ## Contributors ✨
 
