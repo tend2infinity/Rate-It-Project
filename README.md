@@ -127,7 +127,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://portfolio-shambhavi.netlify.app/"><img src="https://avatars.githubusercontent.com/u/56017960?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shambhavi</b></sub></a><br /><a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Code">💻</a> <a href="#design-savi-1311" title="Design">🎨</a> <a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Documentation">📖</a> <a href="#data-savi-1311" title="Data">🔣</a></td>
+    <td align="center"><a href="https://portfolio-shambhavi.netlify.app/"><img src="https://avatars.githubusercontent.com/u/56017960?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shambhavi</b></sub></a><br /><a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Code">💻</a> <a href="#design-savi-1311" title="Design">🎨</a> <a href="https://github.com/tend2infinity/Rate-It-Project/commits?author=savi-1311" title="Documentation">📖</a> <a href="#data-savi-1311" title="Data">🔣</a> <a href="#content-savi-1311" title="Content">🖋</a></td>
   </tr>
 </table>
 
